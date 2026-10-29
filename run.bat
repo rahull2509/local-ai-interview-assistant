@@ -17,19 +17,17 @@ if exist "venv\Scripts\activate.bat" (
     echo.
 )
 
-REM Check Python is available
-python --version >nul 2>&1
-if errorlevel 1 (
-    echo [ERROR] Python is not available on PATH.
-    echo         Install Python 3.10+ from https://www.python.org
-    pause
-    exit /b 1
+REM Determine python executable
+set "PYTHON_EXE=python"
+if exist "venv\Scripts\python.exe" (
+    set "PYTHON_EXE=venv\Scripts\python.exe"
+    echo [OK] Using virtual environment Python: venv\Scripts\python.exe
 )
 
 REM Check PySide6 is importable
-python -c "import PySide6" >nul 2>&1
+%PYTHON_EXE% -c "import PySide6" >nul 2>&1
 if errorlevel 1 (
-    echo [ERROR] PySide6 is not installed.
+    echo [ERROR] PySide6 is not installed in the active environment.
     echo         Run:  pip install -r requirements.txt
     pause
     exit /b 1
@@ -37,7 +35,7 @@ if errorlevel 1 (
 
 echo [OK] Launching application...
 echo.
-python -m app.main
+%PYTHON_EXE% -m app.main
 if errorlevel 1 (
     echo.
     echo [ERROR] Application exited with an error.

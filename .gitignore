@@ -1,41 +1,76 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pyd
+
 # Virtual environments
 venv/
 .venv/
 env/
+ENV/
+env.bak/
+venv.bak/
 
-# Python bytecode
-__pycache__/
-*.py[cod]
-*.pyo
+# Audio test recordings / temporary captures
+*.wav
+*.mp3
+*.flac
+*.m4a
+*.ogg
 
-# IDE / editor
+# Machine Learning model weights and caches
+*.bin
+*.pt
+*.pth
+*.onnx
+*.safetensors
+*.gguf
+*.ctranslate2/
+models/
+.cache/
+huggingface/
+
+# Logs and databases
+*.log
+*.sqlite
+*.db
+
+# OS generated files
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+$RECYCLE.BIN/
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Editor and IDE directories
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
+*.sublime-project
+*.sublime-workspace
 
-# Whisper / HuggingFace model cache
-*.bin
-*.pt
-*.onnx
-*.ctranslate2/
-
-# OS
-Thumbs.db
-Desktop.ini
-.DS_Store
-
-# Logs
-*.log
+# Pytest / Test / Coverage artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
 
 # Distribution / packaging
 dist/
 build/
 *.egg-info/
+*.egg
 
-# Pytest
-.pytest_cache/
-
-# Environment files
+# Local environment / secrets
 .env
+.env.local
+.env.*.local
