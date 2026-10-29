@@ -244,6 +244,15 @@ python -m pytest tests/ -v
 
 ---
 
+## Live End-to-End Verification Status
+
+- [x] **Microphone Capture**: Real hardware capture verified (`sounddevice` on Intel Smart Sound & OPPO Enco Buds).
+- [x] **Local Speech-to-Text**: `faster-whisper-base` int8 verified running offline on CPU.
+- [x] **Local LLM Streaming**: Ollama HTTP API verified running `qwen2.5:3b` with progressive token streaming.
+- [x] **Desktop UI**: PySide6 GUI launched, responsive, status indicators connected.
+
+---
+
 ## Offline Use
 
 After completing the setup (installing dependencies, Whisper model download on first launch, and `ollama pull` for the LLM):
